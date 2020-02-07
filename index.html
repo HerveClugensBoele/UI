@@ -19,33 +19,33 @@
     </header>
 
     <form id="container">
-        <section class="card">
+        <section class="card" id="election-card">
             <h2>Élections</h2>
-            <ul>
+            <ul class="election-list">
                 <li>
-                    <input type="radio" id="radio1" name="election" value="1" checked>
-                    <label for="radio1" class="">
+                    <label>
+                        <input type="radio" name="election" value="1" checked>
                         <span class="card-option-title">43e élection fédérale</span><br/>
                         <span class="card-option-subtitle">21 octobre 2019</span>
                     </label>
                 </li>
                 <li>
-                    <input type="radio" id="radio2" name="election" value="1">
-                    <label for="radio2">
+                    <label>
+                        <input type="radio" name="election" value="1">
                         <span class="card-option-title">Élections générales provinciales</span><br/>
                         <span class="card-option-subtitle">1er octobre 2018</span>
                     </label>
                 </li>
                 <li>
-                    <input type="radio" id="radio3" name="election" value="1">
-                    <label for="radio3">
+                    <label>
+                        <input type="radio" name="election" value="1">
                         <span class="card-option-title">42e élection fédérale</span><br/>
                         <span class="card-option-subtitle">19 octobre 2015</span>
                     </label>
                 </li>
                 <li>
-                    <input type="radio" id="radio4" name="election" value="1">
-                    <label for="radio4">
+                    <label>
+                        <input type="radio" name="election" value="1">
                         <span class="card-option-title">Élections générales provinciales</span><br/>
                         <span class="card-option-subtitle">7 avril 2014</span>
                     </label>
@@ -53,33 +53,33 @@
             </ul>
         </section>
 
-        <section class="card">
+        <section class="card" id="pp-card">
             <h2>Partis politiques</h2>
-            <ul>
+            <ul class="partis-politiques-list">
                 <li>
-                    <input type="checkbox" id="checkbox1" name="pp">
-                    <label for="checkbox1">
+                    <label>
+                        <input type="checkbox" name="pp">
                         <span class="card-option-title">C.A.Q</span><br/>
                         <span class="card-option-subtitle">Coalition Avenir Québec</span>
                     </label>
                 </li>
                 <li>
-                    <input type="checkbox" id="checkbox2" name="pp">
-                    <label for="checkbox2">
+                    <label>
+                        <input type="checkbox" name="pp">
                         <span class="card-option-title">P.L.Q</span><br/>
                         <span class="card-option-subtitle">Parti Libéral du Québec</span>
                     </label>
                 </li>
                 <li>
-                    <input type="checkbox" id="checkbox3" name="pp">
-                    <label for="checkbox3">
+                    <label>
+                        <input type="checkbox" name="pp">
                         <span class="card-option-title">P.Q</span><br/>
                         <span class="card-option-subtitle">Parti Québécois</span>
                     </label>
                 </li>
                 <li>
-                    <input type="checkbox" id="checkbox4" name="pp">
-                    <label for="checkbox4">
+                    <label>
+                        <input type="checkbox" name="pp">
                         <span class="card-option-title">Q.S</span><br/>
                         <span class="card-option-subtitle">Québec Solidaire</span>
                     </label>
@@ -87,14 +87,13 @@
             </ul>
         </section>
 
-        <section class="card">
+        <section class="card" id="action-card">
             <h2>Actions</h2>
-            <ul>
-                <li><button type="submit">Connaitre les propositions</button></li>
+            <ul class="button_list">
+                <li><button type="submit" class="disabled">Connaitre les propositions</button></li>
                 <li><button type="submit">Comparer les propositions</button></li>
             </ul>
         </section>
     </form>
-
 </body>
 </html>

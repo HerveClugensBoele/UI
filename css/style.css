@@ -55,10 +55,10 @@ header .nav_elements li img {
 
 #container {
     margin: 3px auto;
-    padding: 0 5.7em;
+    padding: 0 5em;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 3em;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 4em;
 }
 
 #container .card {
@@ -73,8 +73,45 @@ header .nav_elements li img {
 }
 
 #container .card h2 {
-
+    margin-bottom: 1.2em;
     font-family: Arial, sans-serif;
     font-size: 20px;
     color: #333;
+}
+
+#container #election-card {
+    width: 356px;
+}
+
+#container #pp-card {
+    width: 359px;
+}
+
+#container #action-card {
+    width: 249px;
+}
+
+#container .card .button_list li {
+    margin-bottom: 2em;
+}
+
+#container .card .button_list button {
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0 0 2px rgba(40, 40, 40, 0.117);
+
+    color: white;
+    background: #2196f3;
+    font-size: 14px;
+    padding: 9px 12px;
+
+    width: 100%;
+    cursor: pointer;
+}
+
+#container .card .button_list .disabled {
+    cursor: default;
+    font-weight: bolder;
+    color: #7f7f7f;
+    background: #d7d7d7;
 }
