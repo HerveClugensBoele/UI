@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Log2420 TP1</title>
-    <link rel="stylesheet" href="css/style.css"/>
-    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="./css/style.css"/>
+    <script type="text/javascript" src="./js/main.js"></script>
 </head>
 <body>
     <!-- basically, we need to copy this: https://s07g4j.axshare.com/#id=v40wxq&p=home&c=3-->
@@ -70,7 +70,7 @@
             <ul class="partis-politiques-list">
                 <li>
                     <label class="checkbox" for="cb1">
-                        <input type="checkbox" class="checkbox__input" id="cb1" name="pp">
+                        <input type="checkbox" class="checkbox__input" id="cb1" name="pp" onchange="updateBtns(this)">
                         <div class="checkbox__box"></div>
                         <div class="cb-text-container">
                             <span class="card-option-title">C.A.Q</span><br/>

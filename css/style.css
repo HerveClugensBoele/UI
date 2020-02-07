@@ -32,7 +32,8 @@ header {
     align-items: center;
 
     padding: 1.25em 1.6em 0.5em 1.37em;
-    max-width: 1300px;
+    width: 90vw;
+    min-width: 1150px;
     margin: 0 auto;
 
     color: white;
@@ -57,13 +58,13 @@ header .nav_elements li img {
 
 #container {
     margin: 3px auto;
-    padding: 0 12%;
+    padding: 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 #container .card {
-    margin: 2em 0.5em;
+    margin: 2em 2em;
     padding: 10px 20px;
     min-width: fit-content;
     width: 356px;
