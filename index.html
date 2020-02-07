@@ -8,92 +8,93 @@
 </head>
 <body>
     <!-- basically, we need to copy this: https://s07g4j.axshare.com/#id=v40wxq&p=home&c=3-->
-    <div id="container">
-        <!--  -->
+    <header>
+        <a id="logo">PHAROS</a>
         <nav>
-            <a class="light">PHAROS</a>
-            <img src="images/search.svg" alt="search">
-            <img src="images/menu.svg" alt="menu">
+            <ul class="nav_elements">
+                <li><img src="images/search.svg" alt="search" id="search"></li>
+                <li><img src="images/menu.svg" alt="menu" id="menu"></li>
+            </ul>
         </nav>
+    </header>
 
-        <form>
-            <section class="card">
-                <h2>Élections</h2>
-                <ul>
-                    <li>
-                        <input type="radio" id="radio1" name="election" value="1" checked>
-                        <label for="radio1">
-                            <span>43e élection fédérale</span><br/>
-                            <span>21 octobre 2019</span>
-                        </label>
-                    </li>
-                    <li>
-                        <input type="radio" id="radio2" name="election" value="1">
-                        <label for="radio2">
-                            <span>Élections générales provinciales</span><br/>
-                            <span>1er octobre 2018</span>
-                        </label>
-                    </li>
-                    <li>
-                        <input type="radio" id="radio3" name="election" value="1">
-                        <label for="radio3">
-                            <span>42e élection fédérale</span><br/>
-                            <span>19 octobre 2015</span>
-                        </label>
-                    </li>
-                    <li>
-                        <input type="radio" id="radio4" name="election" value="1">
-                        <label for="radio4">
-                            <span>Élections générales provinciales</span><br/>
-                            <span>7 avril 2014</span>
-                        </label>
-                    </li>
-                </ul>
-            </section>
+    <form id="container">
+        <section class="card">
+            <h2>Élections</h2>
+            <ul>
+                <li>
+                    <input type="radio" id="radio1" name="election" value="1" checked>
+                    <label for="radio1">
+                        <span>43e élection fédérale</span><br/>
+                        <span>21 octobre 2019</span>
+                    </label>
+                </li>
+                <li>
+                    <input type="radio" id="radio2" name="election" value="1">
+                    <label for="radio2">
+                        <span>Élections générales provinciales</span><br/>
+                        <span>1er octobre 2018</span>
+                    </label>
+                </li>
+                <li>
+                    <input type="radio" id="radio3" name="election" value="1">
+                    <label for="radio3">
+                        <span>42e élection fédérale</span><br/>
+                        <span>19 octobre 2015</span>
+                    </label>
+                </li>
+                <li>
+                    <input type="radio" id="radio4" name="election" value="1">
+                    <label for="radio4">
+                        <span>Élections générales provinciales</span><br/>
+                        <span>7 avril 2014</span>
+                    </label>
+                </li>
+            </ul>
+        </section>
 
-            <section class="card">
-                <h2>Partis politiques</h2>
-                <ul>
-                    <li>
-                        <input type="checkbox" id="checkbox1" name="pp">
-                        <label for="checkbox1">
-                            <span>C.A.Q</span><br/>
-                            <span>Coalition Avenir Québec</span>
-                        </label>
-                    </li>
-                    <li>
-                        <input type="checkbox" id="checkbox2" name="pp">
-                        <label for="checkbox2">
-                            <span>P.L.Q</span><br/>
-                            <span>Parti Libéral du Québec</span>
-                        </label>
-                    </li>
-                    <li>
-                        <input type="checkbox" id="checkbox3" name="pp">
-                        <label for="checkbox3">
-                            <span>P.Q</span><br/>
-                            <span>Parti Québécois</span>
-                        </label>
-                    </li>
-                    <li>
-                        <input type="checkbox" id="checkbox4" name="pp">
-                        <label for="checkbox4">
-                            <span>Q.S</span><br/>
-                            <span>Québec Solidaire</span>
-                        </label>
-                    </li>
-                </ul>
-            </section>
+        <section class="card">
+            <h2>Partis politiques</h2>
+            <ul>
+                <li>
+                    <input type="checkbox" id="checkbox1" name="pp">
+                    <label for="checkbox1">
+                        <span>C.A.Q</span><br/>
+                        <span>Coalition Avenir Québec</span>
+                    </label>
+                </li>
+                <li>
+                    <input type="checkbox" id="checkbox2" name="pp">
+                    <label for="checkbox2">
+                        <span>P.L.Q</span><br/>
+                        <span>Parti Libéral du Québec</span>
+                    </label>
+                </li>
+                <li>
+                    <input type="checkbox" id="checkbox3" name="pp">
+                    <label for="checkbox3">
+                        <span>P.Q</span><br/>
+                        <span>Parti Québécois</span>
+                    </label>
+                </li>
+                <li>
+                    <input type="checkbox" id="checkbox4" name="pp">
+                    <label for="checkbox4">
+                        <span>Q.S</span><br/>
+                        <span>Québec Solidaire</span>
+                    </label>
+                </li>
+            </ul>
+        </section>
 
-            <section class="card">
-                <h2>Actions</h2>
-                <ul>
-                    <li><button type="submit">Connaitre les propositions</button></li>
-                    <li><button type="submit">Comparer les propositions</button></li>
-                </ul>
-            </section>
-        </form>
-    </div>
+        <section class="card">
+            <h2>Actions</h2>
+            <ul>
+                <li><button type="submit">Connaitre les propositions</button></li>
+                <li><button type="submit">Comparer les propositions</button></li>
+            </ul>
+        </section>
+    </form>
 
 </body>
 </html>

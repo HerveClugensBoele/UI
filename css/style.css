@@ -8,17 +8,59 @@
 
 * {
     font-family: 'Roboto', sans-serif;
-}
+    font-weight: 400;
+    font-size: 16px;
 
-html, body {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-nav {
-    background: #2196f3;
+html, body {
+    background: #f2f2f2;
 }
 
-nav .light {
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 1.25em 1.6em 0.5em 1.37em;
+    max-width: 1300px;
+    margin: 0 auto;
+
     color: white;
+    background-color: #2196f3
+}
+
+header #logo {
+    cursor: pointer;
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+header .nav_elements {
+    list-style: none;
+}
+
+header .nav_elements li {
+    display: inline-block;
+    cursor: pointer;
+}
+
+header .nav_elements li img {
+    height: 20px;
+    padding: 0 1.3em;
+}
+
+#container {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 3em;
+}
+
+#container .card {
+    background: white;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16);
 }
