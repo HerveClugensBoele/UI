@@ -23,29 +23,33 @@
             <h2>Élections</h2>
             <ul class="election-list">
                 <li>
-                    <label>
-                        <input type="radio" name="election" value="1" checked>
+                    <label for="radio1" class="radio">
+                        <input type="radio" class="radio__input" id="radio1" name="election" value="1" checked>
+                        <div class="radio__radio"></div>
                         <span class="card-option-title">43e élection fédérale</span><br/>
                         <span class="card-option-subtitle">21 octobre 2019</span>
                     </label>
                 </li>
                 <li>
-                    <label>
-                        <input type="radio" name="election" value="1">
+                    <label for="radio2" class="radio">
+                        <input type="radio" class="radio__input" id="radio2" name="election" value="1">
+                        <div class="radio__radio"></div>
                         <span class="card-option-title">Élections générales provinciales</span><br/>
                         <span class="card-option-subtitle">1er octobre 2018</span>
                     </label>
                 </li>
                 <li>
-                    <label>
-                        <input type="radio" name="election" value="1">
+                    <label for="radio3" class="radio">
+                        <input type="radio" class="radio__input" id="radio3" name="election" value="1">
+                        <div class="radio__radio"></div>
                         <span class="card-option-title">42e élection fédérale</span><br/>
                         <span class="card-option-subtitle">19 octobre 2015</span>
                     </label>
                 </li>
                 <li>
-                    <label>
-                        <input type="radio" name="election" value="1">
+                    <label for="radio4" class="radio">
+                        <input type="radio" class="radio__input" id="radio4" name="election" value="1">
+                        <div class="radio__radio"></div>
                         <span class="card-option-title">Élections générales provinciales</span><br/>
                         <span class="card-option-subtitle">7 avril 2014</span>
                     </label>
@@ -57,31 +61,43 @@
             <h2>Partis politiques</h2>
             <ul class="partis-politiques-list">
                 <li>
-                    <label>
-                        <input type="checkbox" name="pp">
-                        <span class="card-option-title">C.A.Q</span><br/>
-                        <span class="card-option-subtitle">Coalition Avenir Québec</span>
+                    <label class="checkbox" for="cb1">
+                        <input type="checkbox" class="checkbox__input" id="cb1" name="pp">
+                        <div class="checkbox__box"></div>
+                        <div class="cb-text-container">
+                            <span class="card-option-title">C.A.Q</span><br/>
+                            <span class="card-option-subtitle">Coalition Avenir Québec</span>
+                        </div>
                     </label>
                 </li>
                 <li>
-                    <label>
-                        <input type="checkbox" name="pp">
-                        <span class="card-option-title">P.L.Q</span><br/>
-                        <span class="card-option-subtitle">Parti Libéral du Québec</span>
+                    <label class="checkbox" for="cb2">
+                        <input type="checkbox" class="checkbox__input" id="cb2" name="pp">
+                        <div class="checkbox__box"></div>
+                        <div class="cb-text-container">
+                            <span class="card-option-title">P.L.Q</span><br/>
+                            <span class="card-option-subtitle">Parti Libéral du Québec</span>
+                        </div>
                     </label>
                 </li>
                 <li>
-                    <label>
-                        <input type="checkbox" name="pp">
-                        <span class="card-option-title">P.Q</span><br/>
-                        <span class="card-option-subtitle">Parti Québécois</span>
+                    <label class="checkbox" for="cb3">
+                        <input type="checkbox" class="checkbox__input" id="cb3" name="pp">
+                        <div class="checkbox__box"></div>
+                        <div class="cb-text-container">
+                            <span class="card-option-title">P.Q</span><br/>
+                            <span class="card-option-subtitle">Parti Québécois</span>
+                        </div>
                     </label>
                 </li>
                 <li>
-                    <label>
-                        <input type="checkbox" name="pp">
-                        <span class="card-option-title">Q.S</span><br/>
-                        <span class="card-option-subtitle">Québec Solidaire</span>
+                    <label class="checkbox" for="cb4">
+                        <input type="checkbox" class="checkbox__input" id="cb4" name="pp">
+                        <div class="checkbox__box"></div>
+                        <div class="cb-text-container">
+                            <span class="card-option-title">Q.S</span><br/>
+                            <span class="card-option-subtitle">Québec Solidaire</span>
+                        </div>
                     </label>
                 </li>
             </ul>
