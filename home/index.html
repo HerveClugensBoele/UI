@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log2420 TP1</title>
+    <link rel="stylesheet" href="../style.css"/>
+    <link rel="stylesheet" href="home.css"/>
+    <script type="text/javascript" src="home.js"></script>
+</head>
+<body>
+    <!-- basically, we need to copy this: https://s07g4j.axshare.com/#id=v40wxq&p=home&c=3-->
+    <header>
+        <a id="logo">PHAROS</a>
+        <nav>
+            <ul class="nav_elements">
+                <li><img src="../search.svg" alt="search" id="search"></li>
+                <li><img src="../menu.svg" alt="menu" id="menu"></li>
+            </ul>
+        </nav>
+    </header>
+
+    <form id="container">
+        <section class="card" id="election-card">
+            <h2>Élections</h2>
+            <ul id="election-list" class="election-list">
+                <!-- Generated Elections go here -->
+            </ul>
+        </section>
+
+        <section class="card" id="pp-card">
+            <h2>Partis politiques</h2>
+            <ul id="partis-list" class="partis-list">
+                <!-- Generated Partis go here -->
+            </ul>
+        </section>
+
+        <section class="card" id="action-card">
+            <h2>Actions</h2>
+            <ul class="button_list">
+                <li><button id="btn-propositions" type="submit" class="disabled">Connaitre les propositions</button></li>
+                <li><button id="btn-comparer" type="submit" class="disabled">Comparer les propositions</button></li>
+            </ul>
+        </section>
+    </form>
+</body>
+</html>
