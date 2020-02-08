@@ -21,47 +21,8 @@
     <form id="container">
         <section class="card" id="election-card">
             <h2>Élections</h2>
-            <ul class="election-list">
-                <li>
-                    <label for="radio1" class="radio">
-                        <input type="radio" class="radio__input" id="radio1" name="election" value="1" checked>
-                        <div class="radio__radio"></div>
-                        <div>
-                            <span class="card-option-title">43e élection fédérale</span><br/>
-                            <span class="card-option-subtitle">21 octobre 2019</span>
-                        </div>
-                    </label>
-                </li>
-                <li>
-                    <label for="radio2" class="radio">
-                        <input type="radio" class="radio__input" id="radio2" name="election" value="1">
-                        <div class="radio__radio"></div>
-                        <div>
-                            <span class="card-option-title">Élections générales provinciales</span><br/>
-                            <span class="card-option-subtitle">1er octobre 2018</span>
-                        </div>
-                    </label>
-                </li>
-                <li>
-                    <label for="radio3" class="radio">
-                        <input type="radio" class="radio__input" id="radio3" name="election" value="1">
-                        <div class="radio__radio"></div>
-                        <div>
-                            <span class="card-option-title">42e élection fédérale</span><br/>
-                            <span class="card-option-subtitle">19 octobre 2015</span>
-                        </div>
-                    </label>
-                </li>
-                <li>
-                    <label for="radio4" class="radio">
-                        <input type="radio" class="radio__input" id="radio4" name="election" value="1">
-                        <div class="radio__radio"></div>
-                        <div>
-                            <span class="card-option-title">Élections générales provinciales</span><br/>
-                            <span class="card-option-subtitle">7 avril 2014</span>
-                        </div>
-                    </label>
-                </li>
+            <ul id="election-list" class="election-list">
+                <!-- Generated Elections go here -->
             </ul>
         </section>
 
@@ -70,7 +31,7 @@
             <ul class="partis-politiques-list">
                 <li>
                     <label class="checkbox" for="cb1">
-                        <input type="checkbox" class="checkbox__input" id="cb1" name="pp" onclick="() => updateBtnComparer()">
+                        <input type="checkbox" class="checkbox__input" id="cb1" name="pp" onclick="clickedCheckbox(this)">
                         <div class="checkbox__box"></div>
                         <div class="cb-text-container">
                             <span class="card-option-title">C.A.Q</span><br/>
@@ -80,7 +41,7 @@
                 </li>
                 <li>
                     <label class="checkbox" for="cb2">
-                        <input type="checkbox" class="checkbox__input" id="cb2" name="pp">
+                        <input type="checkbox" class="checkbox__input" id="cb2" name="pp" onclick="clickedCheckbox(this)">
                         <div class="checkbox__box"></div>
                         <div class="cb-text-container">
                             <span class="card-option-title">P.L.Q</span><br/>
@@ -90,7 +51,7 @@
                 </li>
                 <li>
                     <label class="checkbox" for="cb3">
-                        <input type="checkbox" class="checkbox__input" id="cb3" name="pp">
+                        <input type="checkbox" class="checkbox__input" id="cb3" name="pp" onclick="clickedCheckbox(this)">
                         <div class="checkbox__box"></div>
                         <div class="cb-text-container">
                             <span class="card-option-title">P.Q</span><br/>
@@ -100,7 +61,7 @@
                 </li>
                 <li>
                     <label class="checkbox" for="cb4">
-                        <input type="checkbox" class="checkbox__input" id="cb4" name="pp">
+                        <input type="checkbox" class="checkbox__input" id="cb4" name="pp" onclick="clickedCheckbox(this)">
                         <div class="checkbox__box"></div>
                         <div class="cb-text-container">
                             <span class="card-option-title">Q.S</span><br/>
@@ -114,8 +75,8 @@
         <section class="card" id="action-card">
             <h2>Actions</h2>
             <ul class="button_list">
-                <li><button type="submit" class="disabled">Connaitre les propositions</button></li>
-                <li><button type="submit">Comparer les propositions</button></li>
+                <li><button id="btn-propositions" type="submit" class="disabled">Connaitre les propositions</button></li>
+                <li><button id="btn-comparer" type="submit" class="disabled">Comparer les propositions</button></li>
             </ul>
         </section>
     </form>
