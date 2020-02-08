@@ -12,6 +12,12 @@ fetch('https://log2420-serve.herokuapp.com/JSON/output.json')
         generateElections();
     });
 
+function resetBtns(){
+    checkboxesClicked = [];
+    updateBtnConnaitre();
+    updateBtnComparer();
+}
+
 function getPartis() {
     return jsonData['Elections'][selectedElectionIndex]['type'] === 'Federal' ?
         'PartisFederaux' : 'PartisProvinciaux';
@@ -26,7 +32,7 @@ function generateElections(){
         electionList.removeChild(electionList.firstChild);
     }
 
-    let index = 1;
+    let index = 0;
     for (const election of elections){
         // Generate HTML for 'Election'
 
@@ -37,6 +43,7 @@ function generateElections(){
         radio__input.id = 'radio' + index.toString();
         radio__input.name = 'election';
         radio__input.checked = index === selectedElectionIndex;
+        radio__input.addEventListener('click', (event) => clickedRadio(event.toElement));
 
         // <div class="radio__radio"></div>
         const radio__radio = document.createElement('div');
@@ -81,11 +88,77 @@ function generateElections(){
 }
 
 function generatePartis(str) {
-    partis = getPartis();
-    for (parti of partis) {
-        // Generate HTML for 'parti'
+    resetBtns();
 
+    partisType = getPartis();
+    partis = jsonData[partisType];
+
+    // getting the list and emptying it.
+    const partisList = document.getElementById('partis-list');
+    while(partisList.firstChild) {
+        partisList.removeChild(partisList.firstChild);
     }
+
+    let index = 0;
+    for (const parti of partis){
+        // Generate HTML for 'Partis'
+
+        // <input type="checkbox" class="checkbox__input" id="cb1" name="pp" onclick="clickedCheckbox(this)">
+        const checkbox__input = document.createElement('input');
+        checkbox__input.type = 'checkbox';
+        checkbox__input.classList.add('checkbox__input');
+        checkbox__input.id = 'cb' + index.toString();
+        checkbox__input.name = 'pp';
+        checkbox__input.addEventListener('click', (event) => clickedCheckbox(event.toElement));
+
+        // <div class="checkbox__box"></div>
+        const checkbox__box = document.createElement('div');
+        checkbox__box.classList.add('checkbox__box');
+
+        // <span class="card-option-title">C.A.Q</span><br/>
+        const cardOptionTitle = document.createElement('span');
+        cardOptionTitle.classList.add('card-option-title');
+        cardOptionTitle.textContent = parti['abreviation'];
+
+        // <span class="card-option-subtitle">Coalition Avenir Québec</span>
+        const cardOptionSubtitle = document.createElement('span');
+        cardOptionSubtitle.classList.add('card-option-subtitle');
+        cardOptionSubtitle.textContent = parti['fullname'];
+
+        // <div class="text">
+        const text = document.createElement('div');
+        text.classList.add('text');
+        text.appendChild(cardOptionTitle);
+        text.appendChild(document.createElement('br'));
+        text.appendChild(cardOptionSubtitle);
+
+        // <label class="checkbox" for="cb1">
+        const checkbox = document.createElement('label');
+        checkbox.for = 'radio' + index.toString();
+        checkbox.classList.add('radio');
+        checkbox.appendChild(checkbox__input);
+        checkbox.appendChild(checkbox__box);
+        checkbox.appendChild(text);
+
+        // <li>
+        const li = document.createElement('li');
+        li.appendChild(checkbox);
+
+        // <ul> (parent)
+        partisList.appendChild(li);
+
+        ++index;
+    }
+
+}
+
+
+// The logic that checks for radios being clicked
+
+function clickedRadio(event) {
+    const id = event.id;
+    selectedElectionIndex = +id.charAt(id.length - 1);
+    generatePartis();
 }
 
 

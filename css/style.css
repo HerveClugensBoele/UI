@@ -92,7 +92,7 @@ header .nav_elements li img {
 }
 
 #container #election-card {
-    width: 356px;
+    min-width: 356px;
     height: 100vh;
 }
 
@@ -138,7 +138,7 @@ header .nav_elements li img {
 }
 
 #container #pp-card {
-    width: 359px;
+    min-width: 359px;
     height: 100vh;
 }
 
