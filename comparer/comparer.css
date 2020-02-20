@@ -8,6 +8,7 @@
 .comparison_list li{
     display: inline-flex;
 }
+.comparison_list
 
 .back_arrow{
     height: 15px;
@@ -27,6 +28,10 @@
     padding-top: 25px;
     /*padding-right: 325px;*/
     margin-right: 10px;
+
+    display: inline-block;
+    width: 420px;
+    height: 80px;
 }
 
 .etage{
@@ -36,6 +41,7 @@
 .block_infos{
 
     background: white;
+
 }
 
 .party_name{
