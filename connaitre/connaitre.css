@@ -24,7 +24,7 @@ i:hover {
 }
 
 #scrollable {
-    height: calc(84vh - 75px);
+    max-height: calc(84vh - 75px);
     overflow-y: auto;
 }
 
