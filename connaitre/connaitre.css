@@ -62,8 +62,13 @@ i:hover {
 }
 
 .category-paragraph {
-    color: #333333;
     background: white;
     padding: 50px 20px;
-    margin: 1px;
+    border: 1px solid rgba(215, 215, 215, 1);
+}
+
+.category-paragraph p {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333333;
 }

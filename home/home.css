@@ -27,8 +27,10 @@
 }
 
 #container #election-card {
+    display: table;
     min-width: 356px;
-    height: 100vh;
+    min-height: fit-content;
+    height: 85vh;
 }
 
 #container #election-card li {
@@ -73,8 +75,10 @@
 }
 
 #container #pp-card {
+    display: table;
     min-width: 359px;
-    height: 100vh;
+    min-height: fit-content;
+    height: 85vh;
 }
 
 #container #pp-card li {
