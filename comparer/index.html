@@ -23,43 +23,45 @@
     </div>
     <div id="container">
         <div id="wrapper">
-            <section class="category-header-wrapper">
-                <div id="categories-header left">
-                    <!--Generated title1 goes here-->
-                    <span>N.P.D</span>
+            <section class="category-header-wrapper splits">
+                <div id="caties-head-left" class="categories-header category-header left">
+                    <!--Generated title-left goes here-->
                     <i class="material-icons" onclick="toggleStar(this)">star_border</i>
                 </div>
-                <div id="categories-header right">
-                    <!--Generated title2 goes here-->
-                    <span>P.V.C</span>
+                <div class="divides"></div>
+                <div id="caties-head-right" class="categories-header category-header right">
+                    <!--Generated title-right goes here-->
                     <i class="material-icons" onclick="toggleStar(this)">star_border</i>
                 </div>
             </section>
 
-            <div class="scrollabe">
+            <div class="scrollable">
                 <section>
-                    <div class="category-header-wrapper">
-                        <article class = "category-header left">
+                    <div class="category-header-wrapper splits">
+                        <article id="caty-head-left" class="category-header left">
                             <span>Environnement</span>
                             <i class="material-icons" onclick="toggleStar(this)">star_border</i>
                         </article>
-                        <article class = "category-header right">
+                        <div class="divides"></div>
+                        <article id="caty-head-right" class="category-header right">
                             <span>Environnement</span>
                             <i class="material-icons" onclick="toggleStar(this)">star_border</i>
                         </article>
                     </div>
-                    <div class="category-paragraph-wrapper">
-                        <article class="category-paragraph left">
-                            <p>[CATEGORY INFO GOES HERE]</p>
+                    <div class="category-paragraph-wrapper splits">
+                        <article id="caty-par-left" class="category-paragraph left">
+                            <p>[CATEGORY INFO GOES HERE][CATEGORY INFO GOES HERE][CATEGORY INFO GOES HERE][CATEGORY INFO GOES HERE][CATEGORY INFO GOES HERE]</p>
                         </article>
-                        <article class="category-paragraph right">
+                        <div class="divides"></div>
+                        <article id="caty-par-right" class="category-paragraph right">
                             <p>[CATEGORY INFO GOES HERE]</p>
                         </article>
                     </div>
                 </section>
             </div>
-
         </div>
     </div>
 </body>
+<script type="text/javascript" src="../onclick-events.js"></script>
+<script type="text/javascript" src="./generate-info.js"></script>
 </html>
