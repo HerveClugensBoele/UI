@@ -3,23 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Connaitre</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../style.css"/>
     <link rel="stylesheet" href="connaitre.css"/>
-    <script type="text/javascript" src="connaitre.js"></script>
 </head>
 <body>
     <header>
         <a id="logo">PHAROS</a>
         <nav>
             <ul class="nav_elements">
-                <li><img src="../search.svg" alt="search" id="search"></li>
-                <li><img src="../menu.svg" alt="menu" id="menu"></li>
+                <li><i class="material-icons" id="search">search</i></li>
+                <li><i class="material-icons" id="menu">more_vert</i></li>
             </ul>
         </nav>
     </header>
-
+    <div id="sub-header">
+        <a href="../home/"><i class="material-icons">arrow_back</i></a>
+    </div>
     <div id="container">
-
+        <div id="wrapper">
+            <section class="category-header" id="categories-header">
+                <!--Generated title goes here-->
+                <i class="material-icons" onclick="toggleStar(this)">star_border</i>
+            </section>
+            <div id="scrollable">
+                <!--Generated Sections go here-->
+            </div>
+        </div>
     </div>
 </body>
+<script type="text/javascript" src="onclick-events.js"></script>
+<script type="text/javascript" src="generate-info.js"></script>
 </html>
