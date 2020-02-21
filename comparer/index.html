@@ -22,47 +22,43 @@
         <a href="../home/"><i class="material-icons">arrow_back</i></a>
     </div>
     <div id="container">
-        <div id="wrapper"> <!-- Liste qui va contenir tous les sujets -->
-            <ul class = "side_by_side_panel">
-                <!-- Un sujet donné -->
-                <li>
-                    <div>
-                        <ul class="etage">
-                            <li class = "block_et_texte party_name">
-                                N.P.D
-                                <img src = ../star_off.webp alt= "etoile de selection" class="etoile">
-                            </li>
-                            <li class = "block_et_texte party_name">
-                                P.V.C
-                                <img src = ../star_off.webp alt= "etoile de selection" class="etoile">
-                            </li>
-                        </ul>
-                        <ul class="etage">
-                            <li class="block_et_texte block_sujet">
-                                <!-- sujet de gauche-->
-                                Univers
-                                <img src = ../star_off.webp alt= "etoile de selection" class="etoile">
-                            </li>
-                            <li class="block_et_texte block_sujet">
-                                <!-- sujet de droite-->
-                                Univers
-                                <img src = ../star_off.webp alt= "etoile de selection" class="etoile">
-                            </li>
-                        </ul>
-                        <!-- NOUVEL ETAGE-->
-                        <ul class="etage">
-                            <li class="block_et_texte block_sujet block_infos">
-                                <!-- sujet de gauche-->
-                                Les gens partout au pays s’inquiètent pour l’avenir. Les inondations et les feux de forêt menacent leur foyer et la pollution de l’air et de l’eau affecte gravement leur milieu de vie. Le Canada fait face à une urgence climatique et nous avons besoin d'un gouvernement avec le courage de faire de meilleurs choix pour notre environnement et pour la population. Il est temps de combattre les changements climatiques avec tout le sérieux que nécessite la situation. Les libéraux nous font perdre un temps précieux, en laissant les grands pollueurs s’en tirer et en donnant des milliards en subventions aux compagnies pétrolières et gazières. Les conservateurs nient quant à eux l’existence même du problème. La population, elle, sait que nous ne pouvons pas nous permettre de perdre plus de temps. Ensemble, protégeons notre air et notre eau et devenons des leaders en matière de lutte aux changements climatiques.
-                            </li>
-                            <li class="block_et_texte block_sujet block_infos">
-                                <!-- sujet de gauche-->
-                                Insérer opinion tres tres tranchée.
-                            </li>
-                        </ul>
+        <div id="wrapper">
+            <section class="category-header-wrapper">
+                <div id="categories-header left">
+                    <!--Generated title1 goes here-->
+                    <span>N.P.D</span>
+                    <i class="material-icons" onclick="toggleStar(this)">star_border</i>
+                </div>
+                <div id="categories-header right">
+                    <!--Generated title2 goes here-->
+                    <span>P.V.C</span>
+                    <i class="material-icons" onclick="toggleStar(this)">star_border</i>
+                </div>
+            </section>
+
+            <div class="scrollabe">
+                <section>
+                    <div class="category-header-wrapper">
+                        <article class = "category-header left">
+                            <span>Environnement</span>
+                            <i class="material-icons" onclick="toggleStar(this)">star_border</i>
+                        </article>
+                        <article class = "category-header right">
+                            <span>Environnement</span>
+                            <i class="material-icons" onclick="toggleStar(this)">star_border</i>
+                        </article>
                     </div>
-                </li>
-            </ul>
+                    <div class="category-paragraph-wrapper">
+                        <article class="category-paragraph left">
+                            <p>[CATEGORY INFO GOES HERE]</p>
+                        </article>
+                        <article class="category-paragraph right">
+                            <p>[CATEGORY INFO GOES HERE]</p>
+                        </article>
+                    </div>
+                </section>
+            </div>
+
         </div>
     </div>
 </body>

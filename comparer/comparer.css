@@ -32,50 +32,39 @@ i:hover {
     width: 1020px;
 }
 
-.comparison_list li{
-    display: inline-block;
+.category-header-wrapper {
+    height: 73px;
+    display: grid;
+    grid-column-gap: 8px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "left" "right";
 }
 
-.etage{
-    size: 40px;
+.left {
+    grid-area: left;
 }
 
-.block_et_texte{
-    background: #d7d7d7;
-
-    padding-bottom: 10px;
-    padding-left: 15px;
-    padding-top: 25px;
-    /*padding-right: 325px;*/
-    margin-right: 10px;
-
-    display: inline-block;
-    width: 480px;
-    height: inherit;
-    border: 1px solid rgba(215, 215, 215, 1);
-
-
+.right {
+    grid-area: right;
 }
 
-.block_sujet{
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 73px;
+    color: #333333;
     background: white;
+    margin: 1px;
+    padding: 10px 35px 0 25px;
 }
 
-.block_infos{
-    padding-top:10px;
+#categories-header {
+    background: rgba(215, 215, 215, 1);
 }
 
-.etage{
-    margin-top: 0px;
-}
-
-.party_name{
-    font-size: 25px;
-}
-
-.block_et_texte .etoile{
-    height: 20px;
-    margin-left: 0px;
-    margin-right: 35px;
-    float: right;
+#categories-header span {
+    font-size: 23px;
+    color: black;
 }
