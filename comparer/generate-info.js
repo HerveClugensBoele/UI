@@ -21,13 +21,12 @@ function generateCategories() {
 
 // Generates a single categories header (called only in generateCategoriesHeader())
 function generateCategoriesHeaderWith(elementId, title) {
-    const section = document.getElementById(elementId);
 
     // <span>[TITLE GOES HERE]</span>
     const spanElement = document.createElement('span');
     spanElement.textContent = title;
 
-    section.insertBefore(spanElement, section.firstElementChild);
+    $('#' + elementId).prepend(spanElement);
 }
 
 // Generate the selectedParti Header (displays above categories)

@@ -21,21 +21,15 @@ function generateCategories() {
 // Generate the selectedParti Header (displays above categories)
 function generateCategoriesHeader() {
 
-    const section = document.getElementById('categories-header');
-
-    // Generate HTML for 'Category header'
-
     // <span>[TITLE GOES HERE]</span>
     const spanElement = document.createElement('span');
     spanElement.textContent = selectedParti;
 
-    section.insertBefore(spanElement, section.firstElementChild);
+    $('#categories-header').prepend(spanElement);
 }
 
 // Generate the category title and the category data
 function generateCategoriesPar() {
-
-    const wrapper = document.getElementById('scrollable');
 
     // Generate HTML for 'Categories'
     for (const category of jsonData[selectedParti]) {
@@ -76,6 +70,6 @@ function generateCategoriesPar() {
         sectionElement.appendChild(categoryHeaderElement);
         sectionElement.appendChild(categoryParagraphElement);
 
-        wrapper.appendChild(sectionElement);
+        $('#scrollable').append(sectionElement);
     }
 }

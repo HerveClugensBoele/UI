@@ -1,6 +1,8 @@
 // The logic that loads the JSON in local memory
-loadingData = true;
+let loadingData = true;
 let jsonData;
+let selectedElectionIndex;
+let checkboxesClicked = [];
 fetch('https://log2420-serve.herokuapp.com/JSON/output.json')
     .then(function(response) {
         return response.json();
@@ -25,12 +27,7 @@ function getPartis() {
 
 function generateElections(){
     const elections = jsonData['Elections'];
-
-    // getting the list and emptying it.
-    const electionList = document.getElementById('election-list');
-    while(electionList.firstChild) {
-        electionList.removeChild(electionList.firstChild);
-    }
+    $('#election-list').empty();
 
     let index = 0;
     for (const election of elections){
@@ -79,7 +76,7 @@ function generateElections(){
         li.appendChild(radio);
 
         // <ul> (parent)
-        electionList.appendChild(li);
+        $('#election-list').append(li);
 
         ++index;
     }
@@ -87,17 +84,12 @@ function generateElections(){
     generatePartis();
 }
 
-function generatePartis(str) {
+function generatePartis() {
     resetBtns();
 
     partisType = getPartis();
     partis = jsonData[partisType];
-
-    // getting the list and emptying it.
-    const partisList = document.getElementById('partis-list');
-    while(partisList.firstChild) {
-        partisList.removeChild(partisList.firstChild);
-    }
+    $('#partis-list').empty();
 
     let index = 0;
     for (const parti of partis){
@@ -145,7 +137,7 @@ function generatePartis(str) {
         li.appendChild(checkbox);
 
         // <ul> (parent)
-        partisList.appendChild(li);
+        $('#partis-list').append(li);
 
         ++index;
     }
