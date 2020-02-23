@@ -49,6 +49,7 @@ i:hover {
 }
 
 .splits {
+
     display: grid;
     grid-auto-rows: max-content;
     grid-template-columns: 1fr 8px 1fr;
