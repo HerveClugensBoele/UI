@@ -10,9 +10,14 @@ fetch('../parti-infos.json')
         generateCategories();
     });
 
+function getSelectedParties(){
+    let partiesString = document.location.search.replace(/^.*?\=/,"");
+    let selectedParties = partiesString.split('&');
+    return selectedParties;
+}
 
-const selectedPartiLeft = 'P.L.C';
-const selectedPartiRight = 'P.V.C.';
+const selectedPartiLeft = getSelectedParties()[0];
+const selectedPartiRight = getSelectedParties()[1];
 // Generate the the content for the given Parti
 function generateCategories() {
     generateCategoriesHeader();

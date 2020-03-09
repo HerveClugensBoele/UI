@@ -28,23 +28,31 @@ function setActionButtons() {
 }
 function debugAlert(message){alert(message);}
 
+function getSelectedParties(){
+    let selectedPartiesNames = [];
+    for(const id of checkboxesClicked)
+    {
+        let partyName = document.getElementById(id).parentElement.lastChild.firstChild.textContent;
+        selectedPartiesNames.push(partyName);
+    }
+    return selectedPartiesNames;
+}
+
 function btnConnaitreClicked(){
-    //let queryInfo = getSingleQueryString();
-    window.location = ("https://www.youtube.com/watch?v=gyZfD162-wg&feature=youtu.be");
-    //window.document.location.href = "https://www.youtube.com/watch?v=gyZfD162-wg&feature=youtu.be";
-    debugAlert();
+    if (getSelectedParties().length !=1) {return;}
+    let nextPageLocation = "../connaitre/index.html";
+    let partyName = getSelectedParties()[0];
+    let queryString = "?party="+partyName;
+    window.open(nextPageLocation+queryString);
 }
 
 function btnComparerClicked(){
-    //let queryInfo = getDoubleQueryString();
-
-    //let nextPageLocation = "./index2.html";
-    //window.location.href = ("https://www.youtube.com/watch?v=gyZfD162-wg&feature=youtu.be");
-    //window.reload();
-    //window.location = (nextPageLocation);
-    window.location.href = ("./index2.html");
-    debugAlert();
-    debugAlert();
+    if (getSelectedParties().length !=2) {return;}
+    let nextPageLocation = "../comparer/index.html";
+    let partyName_1 = getSelectedParties()[0];
+    let partyName_2 = getSelectedParties()[1];
+    let queryString = "?parties="+partyName_1+"&"+partyName_2;
+    window.open(nextPageLocation+queryString);
 }
 
 
