@@ -1,0 +1,249 @@
+<html>
+<head>
+<title>home.js</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #cc7832;}
+.s3 { color: #6a8759;}
+.s4 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+home.js</font>
+</center></td></tr></table>
+<pre><span class="s0">// The logic that loads the JSON in local memory</span>
+<span class="s2">let </span><span class="s1">loadingData = </span><span class="s2">true;</span>
+<span class="s2">let </span><span class="s1">jsonData</span><span class="s2">;</span>
+<span class="s2">let </span><span class="s1">selectedElectionIndex</span><span class="s2">;</span>
+<span class="s2">let </span><span class="s1">checkboxesClicked = []</span><span class="s2">;</span>
+<span class="s1">fetch(</span><span class="s3">'https://log2420-serve.herokuapp.com/JSON/output.json'</span><span class="s1">)</span>
+    <span class="s1">.then(</span><span class="s2">function</span><span class="s1">(response) {</span>
+        <span class="s2">return </span><span class="s1">response.json()</span><span class="s2">;</span>
+    <span class="s1">})</span>
+    <span class="s1">.then(</span><span class="s2">function</span><span class="s1">(data){</span>
+        <span class="s1">jsonData = data</span><span class="s2">;</span>
+        <span class="s1">selectedElectionIndex = </span><span class="s4">0</span><span class="s2">;</span>
+        <span class="s1">loadingData = </span><span class="s2">false;</span>
+        <span class="s1">initialize()</span><span class="s2">;</span>
+    <span class="s1">})</span><span class="s2">;</span>
+
+<span class="s2">function </span><span class="s1">initialize()</span>
+<span class="s1">{</span>
+    <span class="s1">generateElections()</span><span class="s2">;</span>
+    <span class="s1">setActionButtons()</span><span class="s2">;</span>
+<span class="s1">}</span>
+
+<span class="s2">function </span><span class="s1">setActionButtons() {</span>
+
+    <span class="s2">let </span><span class="s1">btnConnaitrePropositions = document.getElementById(</span><span class="s3">'btn-propositions'</span><span class="s1">)</span><span class="s2">;</span>
+    <span class="s1">btnConnaitrePropositions.addEventListener(</span><span class="s3">'click'</span><span class="s2">, </span><span class="s1">(event) =&gt; btnConnaitreClicked())</span><span class="s2">;</span>
+    <span class="s2">let </span><span class="s1">btnComparerPropositions = document.getElementById(</span><span class="s3">'btn-comparer'</span><span class="s1">)</span><span class="s2">;</span>
+    <span class="s1">btnComparerPropositions.addEventListener(</span><span class="s3">'click'</span><span class="s2">, </span><span class="s1">(event) =&gt; btnComparerClicked())</span><span class="s2">;</span>
+<span class="s1">}</span>
+<span class="s2">function </span><span class="s1">debugAlert(message){alert(message)</span><span class="s2">;</span><span class="s1">}</span>
+
+<span class="s2">function </span><span class="s1">btnConnaitreClicked(){</span>
+    <span class="s0">//let queryInfo = getSingleQueryString();</span>
+    <span class="s1">debugAlert(</span><span class="s3">&quot;btnConnaitre001&quot;</span><span class="s1">)</span><span class="s2">;</span>
+    <span class="s1">window.document.location.href = </span><span class="s3">&quot;https://www.youtube.com/watch?v=gyZfD162-wg&amp;feature=youtu.be&quot;</span><span class="s2">;</span>
+<span class="s1">}</span>
+
+<span class="s2">function </span><span class="s1">btnComparerClicked(){</span>
+    <span class="s0">//let queryInfo = getDoubleQueryString();</span>
+
+    <span class="s2">let </span><span class="s1">nextPageLocation = </span><span class="s3">&quot;../comparer/index.html&quot;</span><span class="s2">;</span>
+    <span class="s1">location.replace(</span><span class="s3">&quot;https://www.youtube.com/watch?v=gyZfD162-wg&amp;feature=youtu.be&quot;</span><span class="s1">)</span><span class="s2">;</span>
+    <span class="s0">//window.location.replace(&quot;https://www.youtube.com/watch?v=gyZfD162-wg&amp;feature=youtu.be&quot;);</span>
+    <span class="s1">debugAlert(</span><span class="s3">&quot;btnComparer001&quot;</span><span class="s1">)</span><span class="s2">;</span>
+<span class="s1">}</span>
+
+
+
+<span class="s2">function </span><span class="s1">resetBtns(){</span>
+    <span class="s1">checkboxesClicked = []</span><span class="s2">;</span>
+    <span class="s1">updateBtnConnaitre()</span><span class="s2">;</span>
+    <span class="s1">updateBtnComparer()</span><span class="s2">;</span>
+<span class="s1">}</span>
+
+<span class="s2">function </span><span class="s1">getPartis() {</span>
+    <span class="s2">return </span><span class="s1">jsonData[</span><span class="s3">'Elections'</span><span class="s1">][selectedElectionIndex][</span><span class="s3">'type'</span><span class="s1">] === </span><span class="s3">'Federal' </span><span class="s1">?</span>
+        <span class="s3">'PartisFederaux' </span><span class="s1">: </span><span class="s3">'PartisProvinciaux'</span><span class="s2">;</span>
+<span class="s1">}</span>
+
+<span class="s2">function </span><span class="s1">generateElections(){</span>
+    <span class="s2">const </span><span class="s1">elections = jsonData[</span><span class="s3">'Elections'</span><span class="s1">]</span><span class="s2">;</span>
+    <span class="s1">$(</span><span class="s3">'#election-list'</span><span class="s1">).empty()</span><span class="s2">;</span>
+
+    <span class="s2">let </span><span class="s1">index = </span><span class="s4">0</span><span class="s2">;</span>
+    <span class="s2">for </span><span class="s1">(</span><span class="s2">const </span><span class="s1">election of elections){</span>
+        <span class="s0">// Generate HTML for 'Election'</span>
+
+        <span class="s0">// &lt;input type=&quot;radio&quot; class=&quot;radio__input&quot; id=&quot;radio1&quot; name=&quot;election&quot; value=&quot;1&quot; checked&gt;</span>
+        <span class="s2">const </span><span class="s1">radio__input = document.createElement(</span><span class="s3">'input'</span><span class="s1">)</span><span class="s2">;</span>
+        <span class="s1">radio__input.type = </span><span class="s3">'radio'</span><span class="s2">;</span>
+        <span class="s1">radio__input.classList.add(</span><span class="s3">'radio__input'</span><span class="s1">)</span><span class="s2">;</span>
+        <span class="s1">radio__input.id = </span><span class="s3">'radio' </span><span class="s1">+ index.toString()</span><span class="s2">;</span>
+        <span class="s1">radio__input.name = </span><span class="s3">'election'</span><span class="s2">;</span>
+        <span class="s1">radio__input.checked = index === selectedElectionIndex</span><span class="s2">;</span>
+        <span class="s1">radio__input.addEventListener(</span><span class="s3">'click'</span><span class="s2">, </span><span class="s1">(event) =&gt; clickedRadio(event.toElement))</span><span class="s2">;</span>
+
+        <span class="s0">// &lt;div class=&quot;radio__radio&quot;&gt;&lt;/div&gt;</span>
+        <span class="s2">const </span><span class="s1">radio__radio = document.createElement(</span><span class="s3">'div'</span><span class="s1">)</span><span class="s2">;</span>
+        <span class="s1">radio__radio.classList.add(</span><span class="s3">'radio__radio'</span><span class="s1">)</span><span class="s2">;</span>
+
+        <span class="s0">// &lt;span class=&quot;card-option-title&quot;&gt;43e élection fédérale&lt;/span&gt;&lt;br/&gt;</span>
+        <span class="s2">const </span><span class="s1">cardOptionTitle = document.createElement(</span><span class="s3">'span'</span><span class="s1">)</span><span class="s2">;</span>
+        <span class="s1">cardOptionTitle.classList.add(</span><span class="s3">'card-option-title'</span><span class="s1">)</span><span class="s2">;</span>
+        <span class="s1">cardOptionTitle.textContent = election[</span><span class="s3">'name'</span><span class="s1">]</span><span class="s2">;</span>
+
+        <span class="s0">// &lt;span class=&quot;card-option-subtitle&quot;&gt;21 octobre 2019&lt;/span&gt;</span>
+        <span class="s2">const </span><span class="s1">cardOptionSubtitle = document.createElement(</span><span class="s3">'span'</span><span class="s1">)</span><span class="s2">;</span>
+        <span class="s1">cardOptionSubtitle.classList.add(</span><span class="s3">'card-option-subtitle'</span><span class="s1">)</span><span class="s2">;</span>
+        <span class="s1">cardOptionSubtitle.textContent = election[</span><span class="s3">'date'</span><span class="s1">]</span><span class="s2">;</span>
+
+        <span class="s0">// &lt;div class=&quot;text&quot;&gt;</span>
+        <span class="s2">const </span><span class="s1">text = document.createElement(</span><span class="s3">'div'</span><span class="s1">)</span><span class="s2">;</span>
+        <span class="s1">text.classList.add(</span><span class="s3">'text'</span><span class="s1">)</span><span class="s2">;</span>
+        <span class="s1">text.appendChild(cardOptionTitle)</span><span class="s2">;</span>
+        <span class="s1">text.appendChild(document.createElement(</span><span class="s3">'br'</span><span class="s1">))</span><span class="s2">;</span>
+        <span class="s1">text.appendChild(cardOptionSubtitle)</span><span class="s2">;</span>
+
+        <span class="s0">// &lt;label for=&quot;radio1&quot; class=&quot;radio&quot;&gt;</span>
+        <span class="s2">const </span><span class="s1">radio = document.createElement(</span><span class="s3">'label'</span><span class="s1">)</span><span class="s2">;</span>
+        <span class="s1">radio.for = </span><span class="s3">'radio' </span><span class="s1">+ index.toString()</span><span class="s2">;</span>
+        <span class="s1">radio.classList.add(</span><span class="s3">'radio'</span><span class="s1">)</span><span class="s2">;</span>
+        <span class="s1">radio.appendChild(radio__input)</span><span class="s2">;</span>
+        <span class="s1">radio.appendChild(radio__radio)</span><span class="s2">;</span>
+        <span class="s1">radio.appendChild(text)</span><span class="s2">;</span>
+
+        <span class="s0">// &lt;li&gt;</span>
+        <span class="s2">const </span><span class="s1">li = document.createElement(</span><span class="s3">'li'</span><span class="s1">)</span><span class="s2">;</span>
+        <span class="s1">li.appendChild(radio)</span><span class="s2">;</span>
+
+        <span class="s0">// &lt;ul&gt; (parent)</span>
+        <span class="s1">$(</span><span class="s3">'#election-list'</span><span class="s1">).append(li)</span><span class="s2">;</span>
+
+        <span class="s1">++index</span><span class="s2">;</span>
+    <span class="s1">}</span>
+
+    <span class="s1">generatePartis()</span><span class="s2">;</span>
+<span class="s1">}</span>
+
+<span class="s2">function </span><span class="s1">generatePartis() {</span>
+    <span class="s1">resetBtns()</span><span class="s2">;</span>
+
+    <span class="s1">partisType = getPartis()</span><span class="s2">;</span>
+    <span class="s1">partis = jsonData[partisType]</span><span class="s2">;</span>
+    <span class="s1">$(</span><span class="s3">'#partis-list'</span><span class="s1">).empty()</span><span class="s2">;</span>
+
+    <span class="s2">let </span><span class="s1">index = </span><span class="s4">0</span><span class="s2">;</span>
+    <span class="s2">for </span><span class="s1">(</span><span class="s2">const </span><span class="s1">parti of partis){</span>
+        <span class="s0">// Generate HTML for 'Partis'</span>
+
+        <span class="s0">// &lt;input type=&quot;checkbox&quot; class=&quot;checkbox__input&quot; id=&quot;cb1&quot; name=&quot;pp&quot; onclick=&quot;clickedCheckbox(this)&quot;&gt;</span>
+        <span class="s2">const </span><span class="s1">checkbox__input = document.createElement(</span><span class="s3">'input'</span><span class="s1">)</span><span class="s2">;</span>
+        <span class="s1">checkbox__input.type = </span><span class="s3">'checkbox'</span><span class="s2">;</span>
+        <span class="s1">checkbox__input.classList.add(</span><span class="s3">'checkbox__input'</span><span class="s1">)</span><span class="s2">;</span>
+        <span class="s1">checkbox__input.id = </span><span class="s3">'cb' </span><span class="s1">+ index.toString()</span><span class="s2">;</span>
+        <span class="s1">checkbox__input.name = </span><span class="s3">'pp'</span><span class="s2">;</span>
+        <span class="s1">checkbox__input.addEventListener(</span><span class="s3">'click'</span><span class="s2">, </span><span class="s1">(event) =&gt; clickedCheckbox(event.toElement))</span><span class="s2">;</span>
+
+        <span class="s0">// &lt;div class=&quot;checkbox__box&quot;&gt;&lt;/div&gt;</span>
+        <span class="s2">const </span><span class="s1">checkbox__box = document.createElement(</span><span class="s3">'div'</span><span class="s1">)</span><span class="s2">;</span>
+        <span class="s1">checkbox__box.classList.add(</span><span class="s3">'checkbox__box'</span><span class="s1">)</span><span class="s2">;</span>
+
+        <span class="s0">// &lt;span class=&quot;card-option-title&quot;&gt;C.A.Q&lt;/span&gt;&lt;br/&gt;</span>
+        <span class="s2">const </span><span class="s1">cardOptionTitle = document.createElement(</span><span class="s3">'span'</span><span class="s1">)</span><span class="s2">;</span>
+        <span class="s1">cardOptionTitle.classList.add(</span><span class="s3">'card-option-title'</span><span class="s1">)</span><span class="s2">;</span>
+        <span class="s1">cardOptionTitle.textContent = parti[</span><span class="s3">'abreviation'</span><span class="s1">]</span><span class="s2">;</span>
+
+        <span class="s0">// &lt;span class=&quot;card-option-subtitle&quot;&gt;Coalition Avenir Québec&lt;/span&gt;</span>
+        <span class="s2">const </span><span class="s1">cardOptionSubtitle = document.createElement(</span><span class="s3">'span'</span><span class="s1">)</span><span class="s2">;</span>
+        <span class="s1">cardOptionSubtitle.classList.add(</span><span class="s3">'card-option-subtitle'</span><span class="s1">)</span><span class="s2">;</span>
+        <span class="s1">cardOptionSubtitle.textContent = parti[</span><span class="s3">'fullname'</span><span class="s1">]</span><span class="s2">;</span>
+
+        <span class="s0">// &lt;div class=&quot;text&quot;&gt;</span>
+        <span class="s2">const </span><span class="s1">text = document.createElement(</span><span class="s3">'div'</span><span class="s1">)</span><span class="s2">;</span>
+        <span class="s1">text.classList.add(</span><span class="s3">'text'</span><span class="s1">)</span><span class="s2">;</span>
+        <span class="s1">text.appendChild(cardOptionTitle)</span><span class="s2">;</span>
+        <span class="s1">text.appendChild(document.createElement(</span><span class="s3">'br'</span><span class="s1">))</span><span class="s2">;</span>
+        <span class="s1">text.appendChild(cardOptionSubtitle)</span><span class="s2">;</span>
+
+        <span class="s0">// &lt;label class=&quot;checkbox&quot; for=&quot;cb1&quot;&gt;</span>
+        <span class="s2">const </span><span class="s1">checkbox = document.createElement(</span><span class="s3">'label'</span><span class="s1">)</span><span class="s2">;</span>
+        <span class="s1">checkbox.for = </span><span class="s3">'radio' </span><span class="s1">+ index.toString()</span><span class="s2">;</span>
+        <span class="s1">checkbox.classList.add(</span><span class="s3">'radio'</span><span class="s1">)</span><span class="s2">;</span>
+        <span class="s1">checkbox.appendChild(checkbox__input)</span><span class="s2">;</span>
+        <span class="s1">checkbox.appendChild(checkbox__box)</span><span class="s2">;</span>
+        <span class="s1">checkbox.appendChild(text)</span><span class="s2">;</span>
+
+        <span class="s0">// &lt;li&gt;</span>
+        <span class="s2">const </span><span class="s1">li = document.createElement(</span><span class="s3">'li'</span><span class="s1">)</span><span class="s2">;</span>
+        <span class="s1">li.appendChild(checkbox)</span><span class="s2">;</span>
+
+        <span class="s0">// &lt;ul&gt; (parent)</span>
+        <span class="s1">$(</span><span class="s3">'#partis-list'</span><span class="s1">).append(li)</span><span class="s2">;</span>
+
+        <span class="s1">++index</span><span class="s2">;</span>
+    <span class="s1">}</span>
+
+<span class="s1">}</span>
+
+
+<span class="s0">// The logic that checks for radios being clicked</span>
+
+<span class="s2">function </span><span class="s1">clickedRadio(event) {</span>
+    <span class="s2">const </span><span class="s1">id = event.id</span><span class="s2">;</span>
+    <span class="s1">selectedElectionIndex = +id.charAt(id.length - </span><span class="s4">1</span><span class="s1">)</span><span class="s2">;</span>
+    <span class="s1">generatePartis()</span><span class="s2">;</span>
+<span class="s1">}</span>
+
+
+<span class="s0">// The logic that checks for checkboxes being clicked</span>
+
+<span class="s1">checkboxesClicked = []</span><span class="s2">;</span>
+
+<span class="s2">function </span><span class="s1">clickedCheckbox(event){</span>
+    <span class="s2">const </span><span class="s1">id = event.id</span><span class="s2">;</span>
+    <span class="s1">updateCheckboxesClicked(id)</span><span class="s2">;</span>
+    <span class="s1">updateBtnConnaitre()</span><span class="s2">;</span>
+    <span class="s1">updateBtnComparer()</span><span class="s2">;</span>
+<span class="s1">}</span>
+
+<span class="s2">function </span><span class="s1">updateCheckboxesClicked(id) {</span>
+    <span class="s2">if </span><span class="s1">(document.getElementById(id).checked){</span>
+        <span class="s2">if </span><span class="s1">(checkboxesClicked.indexOf(id) &lt; </span><span class="s4">0</span><span class="s1">){</span>
+            <span class="s1">checkboxesClicked.push(id)</span><span class="s2">;</span>
+        <span class="s1">}</span>
+    <span class="s1">} </span><span class="s2">else </span><span class="s1">{</span>
+        <span class="s2">if </span><span class="s1">(</span><span class="s4">0 </span><span class="s1">&lt;= checkboxesClicked.indexOf(id)){</span>
+            <span class="s1">checkboxesClicked.splice(checkboxesClicked.indexOf(id)</span><span class="s2">, </span><span class="s4">1</span><span class="s1">)</span><span class="s2">;</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+
+<span class="s2">function </span><span class="s1">updateBtnConnaitre() {</span>
+    <span class="s2">const </span><span class="s1">classList = document.getElementById(</span><span class="s3">&quot;btn-propositions&quot;</span><span class="s1">).classList</span><span class="s2">;</span>
+    <span class="s2">if </span><span class="s1">(checkboxesClicked.length === </span><span class="s4">1 </span><span class="s1">&amp;&amp; classList.contains(</span><span class="s3">'disabled'</span><span class="s1">)) {</span>
+        <span class="s1">classList.remove(</span><span class="s3">'disabled'</span><span class="s1">)</span><span class="s2">;</span>
+    <span class="s1">} </span><span class="s2">else if </span><span class="s1">(checkboxesClicked.length !== </span><span class="s4">1 </span><span class="s1">&amp;&amp; !classList.contains(</span><span class="s3">'disabled'</span><span class="s1">)){</span>
+        <span class="s1">classList.add(</span><span class="s3">'disabled'</span><span class="s1">)</span><span class="s2">;</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+
+<span class="s2">function </span><span class="s1">updateBtnComparer() {</span>
+    <span class="s2">const </span><span class="s1">classList = document.getElementById(</span><span class="s3">&quot;btn-comparer&quot;</span><span class="s1">).classList</span><span class="s2">;</span>
+    <span class="s2">if </span><span class="s1">(checkboxesClicked.length === </span><span class="s4">2 </span><span class="s1">&amp;&amp; classList.contains(</span><span class="s3">'disabled'</span><span class="s1">)) {</span>
+        <span class="s1">classList.remove(</span><span class="s3">'disabled'</span><span class="s1">)</span><span class="s2">;</span>
+    <span class="s1">} </span><span class="s2">else if </span><span class="s1">(checkboxesClicked.length !== </span><span class="s4">2 </span><span class="s1">&amp;&amp; !classList.contains(</span><span class="s3">'disabled'</span><span class="s1">)){</span>
+        <span class="s1">classList.add(</span><span class="s3">'disabled'</span><span class="s1">)</span><span class="s2">;</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

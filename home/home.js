@@ -11,8 +11,43 @@ fetch('https://log2420-serve.herokuapp.com/JSON/output.json')
         jsonData = data;
         selectedElectionIndex = 0;
         loadingData = false;
-        generateElections();
+        initialize();
     });
+
+function initialize()
+{
+    generateElections();
+    setActionButtons();
+}
+
+function setActionButtons() {
+    let btnConnaitrePropositions = document.getElementById('btn-propositions');
+    btnConnaitrePropositions.addEventListener('click', (event) => btnConnaitreClicked());
+    let btnComparerPropositions = document.getElementById('btn-comparer');
+    btnComparerPropositions.addEventListener('click', (event) => btnComparerClicked());
+}
+function debugAlert(message){alert(message);}
+
+function btnConnaitreClicked(){
+    //let queryInfo = getSingleQueryString();
+    window.location = ("https://www.youtube.com/watch?v=gyZfD162-wg&feature=youtu.be");
+    //window.document.location.href = "https://www.youtube.com/watch?v=gyZfD162-wg&feature=youtu.be";
+    debugAlert();
+}
+
+function btnComparerClicked(){
+    //let queryInfo = getDoubleQueryString();
+
+    //let nextPageLocation = "./index2.html";
+    //window.location.href = ("https://www.youtube.com/watch?v=gyZfD162-wg&feature=youtu.be");
+    //window.reload();
+    //window.location = (nextPageLocation);
+    window.location.href = ("./index2.html");
+    debugAlert();
+    debugAlert();
+}
+
+
 
 function resetBtns(){
     checkboxesClicked = [];

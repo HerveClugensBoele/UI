@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>index.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #e8bf6a;}
+.s1 { color: #bababa;}
+.s2 { color: #a9b7c6;}
+.s3 { color: #a5c261;}
+.s4 { color: #a9b7c6;}
+.s5 { color: #808080;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+index.html</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;!DOCTYPE </span><span class="s1">html</span><span class="s0">&gt;</span>
+<span class="s0">&lt;html </span><span class="s1">lang</span><span class="s3">=&quot;en&quot;</span><span class="s0">&gt;</span>
+<span class="s0">&lt;head&gt;</span>
+    <span class="s0">&lt;meta </span><span class="s1">charset</span><span class="s3">=&quot;UTF-8&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;title&gt;</span><span class="s4">Log2420 TP1</span><span class="s0">&lt;/title&gt;</span>
+    <span class="s0">&lt;script </span><span class="s1">src</span><span class="s3">=&quot;https://code.jquery.com/jquery-3.4.1.min.js&quot;</span>
+            <span class="s1">integrity</span><span class="s3">=&quot;sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=&quot;</span>
+            <span class="s1">crossorigin</span><span class="s3">=&quot;anonymous&quot;</span><span class="s0">&gt;&lt;/script&gt;</span>
+    <span class="s0">&lt;link </span><span class="s1">href</span><span class="s3">=&quot;https://fonts.googleapis.com/icon?family=Material+Icons&quot; </span><span class="s1">rel</span><span class="s3">=&quot;stylesheet&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;link </span><span class="s1">rel</span><span class="s3">=&quot;stylesheet&quot; </span><span class="s1">href</span><span class="s3">=&quot;../style.css&quot;</span><span class="s0">/&gt;</span>
+    <span class="s0">&lt;link </span><span class="s1">rel</span><span class="s3">=&quot;stylesheet&quot; </span><span class="s1">href</span><span class="s3">=&quot;home.css&quot;</span><span class="s0">/&gt;</span>
+    <span class="s0">&lt;script </span><span class="s1">type</span><span class="s3">=&quot;text/javascript&quot; </span><span class="s1">src</span><span class="s3">=&quot;home.js&quot;</span><span class="s0">&gt;&lt;/script&gt;</span>
+<span class="s0">&lt;/head&gt;</span>
+<span class="s0">&lt;body&gt;</span>
+    <span class="s5">&lt;!-- basically, we need to copy this: https://s07g4j.axshare.com/#id=v40wxq&amp;p=home&amp;c=3--&gt;</span>
+    <span class="s0">&lt;header&gt;</span>
+        <span class="s0">&lt;a </span><span class="s1">id</span><span class="s3">=&quot;logo&quot;</span><span class="s0">&gt;</span><span class="s4">PHAROS</span><span class="s0">&lt;/a&gt;</span>
+        <span class="s0">&lt;nav&gt;</span>
+            <span class="s0">&lt;ul </span><span class="s1">class</span><span class="s3">=&quot;nav_elements&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;li&gt;&lt;i </span><span class="s1">class</span><span class="s3">=&quot;material-icons&quot; </span><span class="s1">id</span><span class="s3">=&quot;search&quot;</span><span class="s0">&gt;</span><span class="s4">search</span><span class="s0">&lt;/i&gt;&lt;/li&gt;</span>
+                <span class="s0">&lt;li&gt;&lt;i </span><span class="s1">class</span><span class="s3">=&quot;material-icons&quot; </span><span class="s1">id</span><span class="s3">=&quot;menu&quot;</span><span class="s0">&gt;</span><span class="s4">more_vert</span><span class="s0">&lt;/i&gt;&lt;/li&gt;</span>
+            <span class="s0">&lt;/ul&gt;</span>
+        <span class="s0">&lt;/nav&gt;</span>
+    <span class="s0">&lt;/header&gt;</span>
+
+    <span class="s0">&lt;form </span><span class="s1">id</span><span class="s3">=&quot;container&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;section </span><span class="s1">class</span><span class="s3">=&quot;card&quot; </span><span class="s1">id</span><span class="s3">=&quot;election-card&quot;</span><span class="s0">&gt;</span>
+            <span class="s0">&lt;h2&gt;</span><span class="s4">Élections</span><span class="s0">&lt;/h2&gt;</span>
+            <span class="s0">&lt;ul </span><span class="s1">id</span><span class="s3">=&quot;election-list&quot; </span><span class="s1">class</span><span class="s3">=&quot;election-list&quot;</span><span class="s0">&gt;</span>
+                <span class="s5">&lt;!-- Generated Elections go here --&gt;</span>
+            <span class="s0">&lt;/ul&gt;</span>
+        <span class="s0">&lt;/section&gt;</span>
+
+        <span class="s0">&lt;section </span><span class="s1">class</span><span class="s3">=&quot;card&quot; </span><span class="s1">id</span><span class="s3">=&quot;pp-card&quot;</span><span class="s0">&gt;</span>
+            <span class="s0">&lt;h2&gt;</span><span class="s4">Partis politiques</span><span class="s0">&lt;/h2&gt;</span>
+            <span class="s0">&lt;ul </span><span class="s1">id</span><span class="s3">=&quot;partis-list&quot; </span><span class="s1">class</span><span class="s3">=&quot;partis-list&quot;</span><span class="s0">&gt;</span>
+                <span class="s5">&lt;!-- Generated Partis go here --&gt;</span>
+            <span class="s0">&lt;/ul&gt;</span>
+        <span class="s0">&lt;/section&gt;</span>
+
+        <span class="s0">&lt;section </span><span class="s1">class</span><span class="s3">=&quot;card&quot; </span><span class="s1">id</span><span class="s3">=&quot;action-card&quot;</span><span class="s0">&gt;</span>
+            <span class="s0">&lt;h2&gt;</span><span class="s4">Actions</span><span class="s0">&lt;/h2&gt;</span>
+            <span class="s0">&lt;ul </span><span class="s1">class</span><span class="s3">=&quot;button_list&quot;</span><span class="s0">&gt;</span>
+                <span class="s0">&lt;li&gt;&lt;button </span><span class="s1">id</span><span class="s3">=&quot;btn-propositions&quot; </span><span class="s1">class</span><span class="s3">=&quot;disabled&quot;</span><span class="s0">&gt;</span><span class="s4">Connaitre les propositions</span><span class="s0">&lt;/button&gt;&lt;/li&gt;</span>
+                <span class="s0">&lt;li&gt;&lt;button </span><span class="s1">id</span><span class="s3">=&quot;btn-comparer&quot; </span><span class="s1">class</span><span class="s3">=&quot;disabled&quot;</span><span class="s0">&gt;</span><span class="s4">Comparer les propositions</span><span class="s0">&lt;/button&gt;&lt;/li&gt;</span>
+            <span class="s0">&lt;/ul&gt;</span>
+        <span class="s0">&lt;/section&gt;</span>
+    <span class="s0">&lt;/form&gt;</span>
+<span class="s0">&lt;/body&gt;</span>
+<span class="s0">&lt;/html&gt;</span>
+</pre>
+</body>
+</html>

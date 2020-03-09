@@ -117,8 +117,6 @@ function generateCategoriesPar() {
 
     let categoryAndParagraphWrapper = document.getElementById("category_and_paragraph_wrapper");
 
-    let debugVar = jsonData[selectedPartiLeft];
-
     for(const category of jsonData[selectedPartiLeft])
     {
         let categoryHeaderPair = document.createElement('div');

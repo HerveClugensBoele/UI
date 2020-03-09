@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Comparer</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="../connaitre/connaitre.css"/>
+    <link rel="stylesheet" href="../style.css"/>
+    <link rel="stylesheet" href="comparer.css"/>
+    <script type="text/javascript" src="comparer.js"></script>
+</head>
+<body>
+    <header>
+        <a id="logo">PHAROS</a>
+        <nav>
+            <ul class="nav_elements">
+                <li><i class="material-icons" id="search">search</i></li>
+                <li><i class="material-icons" id="menu">more_vert</i></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="sub-header">
+        <a href="../home/"><i class="material-icons">arrow_back</i></a>
+    </div>
+    <div id="container">
+        <div id="wrapper">
+            <section class="category-header-wrapper splits">
+                <div id="caties-head-left" class="categories-header category-header left">
+                    <!--Generated title-left goes here-->
+                    <i class="material-icons" onclick="toggleStar(this)">star_border</i>
+                </div>
+                <div class="divides"></div>
+                <div id="caties-head-right" class="categories-header category-header right">
+                    <!--Generated title-right goes here-->
+                    <i class="material-icons" onclick="toggleStar(this)">star_border</i>
+                </div>
+            </section>
+
+            <div class="scrollable">
+                <section id="category_and_paragraph_wrapper">
+                    <!-- Generated categories go here -->
+                </section>
+
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="../onclick-events.js"></script>
+<script type="text/javascript" src="./generate-info.js"></script>
+</html>
