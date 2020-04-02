@@ -1,7 +1,7 @@
 
 // The logic that loads the JSON in local memory
 let jsonData;
-fetch('../parti-infos.json')
+fetch('https://api.myjson.com/bins/twdog')
     .then(function(response) {
         return response.json();
     })
